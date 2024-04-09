@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root  {
+    --dark:#464646;
+    --maroon:#8b3031;
+    --yellow:#eed647;
+    --white:#ffffff;
+    --green:#027B3A;
+}
+
+.bgMaroon {
+    background-color: var(--maroon);
+}
+.textMaroon {
+    color: var(--maroon);
+}
+
+.bgYellow {
+    background-color: var(--yellow);
+}
+
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    height: 100%;
+}
+
+
+.list-group-item {
+    border-radius: 5px 5px 0 0;
+    margin-left: 1rem;
+}
+
+.list-group-item:hover {
+    opacity: .8;
+}
+
+#list-link .active {
+    background-color: var(--white) !important;
+    color: var(--green) !important;
+    font-weight: 800;
+}
+
+
+.sidebar-menu {
+    width: 250px;
+    height: 100vh;
+    transition: all .9s;
+ }
+
+#sidebar a {
+    margin: 0%;
+}
+
+.navbar {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#page-content-wrapper {
+    max-width: 100vw;
+    width: 100vw;
+}
+
+#notification-list {
+    height:300px !important;
+}
+#main-content {
+    border: 2px solid  var(--white);
+    width: 100%;
+    height: 100%;
+    
+    
+}
+
+/* Dashboard */
+.add-btn {
+    background-color: var(--maroon) !important;
+    color: var(--white);
+    border: none !important;
+}
+
+.add-btn:hover {
+    opacity: .8;
+}
+
+/* Modal*/
+#modal-form {
+    background-color: #dcf9e9 !important;
+}
+
+table {
+    font-size: small !important;
+}
+
+
+.table {
+    border: 1px solid black;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+ }
+
+th {
+    padding: 8px !important;
+}
+
+
+.action span {
+    display: inline-block;
+}
+
+.opacity-btn {
+    opacity: .4; 
+}
+
+.action-btn {
+    border: none;
+}
+
+.action-btn:hover {
+    opacity: 1;
+}
+
+
+.form-horizontal{
+    display:block;
+    width:100%;
+    margin:0 auto;
+}
+
+.label {
+    font-weight: 500;
+}
+
+.dashboard-card {
+    min-width: 100px;
+    width:250px;
+    height:50px;
+    padding:15px;
+}
+
+.dashboard-img {
+    width: 100px;
+}
+
+.card-img-size {
+    width: 100px !important;
+}
+
+#purchase-btn {
+    margin-top: 450px !important;
+}
+
+.no-print-footer .modal-footer {
+    display: none !important;
+}
+

@@ -1,0 +1,28 @@
+body {
+    font-size: 12px; /* Adjust the font size for printing */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.action {
+    display: none; /* Hide action buttons in print */
+}
+
+/* Hide the specified container in print */
+#table {
+    display: none;
+}

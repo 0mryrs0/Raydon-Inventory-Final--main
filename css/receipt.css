@@ -1,0 +1,41 @@
+/* Add your custom styles here */
+#purchaseOrder {
+    padding: 1px;
+    text-align: center;
+    font-size: larger;
+}
+
+/* Additional styling for a receipt-like appearance */
+.purchase-header {
+    text-align: center;
+}
+
+.purchase-header h3 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.purchase-body {
+    font-size: larger;
+}
+
+.purchase-body table {
+    width: 100%;
+}
+
+.purchase-body h6 {
+    font-size: larger;
+}
+
+/* Set styles for printed pages */
+@media print {
+    body, #purchaseOrder {
+        font-size: larger;
+        margin: 0; /* Reset default body margin */
+        padding: 0; /* Reset default padding */
+    }
+
+    .purchase-header h3, .purchase-body h6 {
+        font-size: larger;
+    }
+}

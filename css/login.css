@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root  {
+    --dark:#464646;
+    --maroon:#8B3031;
+    --yellow:#EED647;
+    --white:#ffffff;
+    --green:#027b3a;
+}
+
+* {
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    overflow: hidden;
+}
+
+.container .left-container-img {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green);
+}
+
+.container .left-container-img img{
+    width: 90%;
+}
+
+.container form{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: auto;
+   
+}
+
+.container form .form-header h2{
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--maroon);
+}
+
+.container form .form-group {
+    width: 80%;
+    text-align: center;
+}
+
+input {
+    width: 60%;
+    padding: .7rem 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--dark);
+}
+
+input[type="text"]{
+    background: url(../img/user.svg) no-repeat scroll 7px 7px;
+}
+
+input[type="password"] {
+    background: url(../img/password.svg) no-repeat scroll 7px 7px;
+}
+::placeholder {
+    text-align: center;
+
+}
+
+.forgot-password a{
+    color: var(--dark);
+    font-weight: 800;
+    font-size: 10px;
+    margin-left: 270px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+#submit-btn {
+    width: 40%;
+    padding: .7rem 0;
+    background-color: var(--maroon);
+    color: var(--white);
+    border: none;
+    font-weight: 800;
+    border-radius: 12px;
+
+}
+
+#submit-btn:hover {
+    background-color: #8b3031dd;
+}
+
+/* 
+Responsive  */
+@media screen and (max-width:700px) {
+
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        padding-top: 5rem;
+    }
+
+    .container form {
+        width: 100%;
+    }
+
+    .container form .form-group {
+        width: 100%;
+        text-align: center;
+    }
+
+    .forgot-password a{
+        text-align: center;
+        margin: 0%;
+    }
+
+    
+
+}

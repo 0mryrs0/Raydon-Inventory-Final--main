@@ -111,7 +111,7 @@
         </div>
         <div class="alert alert-warning d-none" id="errorMessage_update"></div>
         <div class="container h-100 overflow-y-auto" id="table-container">
-            <div class="mt-1 overflow-y-scroll" id="table" style="height: 400px">
+            <div class="mt-1 overflow-y-auto" id="table" style="height: 400px">
                 <table class="table table-warning table-hover text-center default-table table-sm table-bordered align-middle px-3">
                     <thead class="table-dark">
                     <tr>
@@ -123,7 +123,7 @@
                         <th>Sales Order Number</th>
                     </tr> 
                     </thead>              
-                    <tbody class="default-table">
+                    <tbody>
                     <?php 
                         //Getting the data from database
                         $query = "SELECT * from sales";

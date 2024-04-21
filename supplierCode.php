@@ -173,7 +173,7 @@ if(isset($_POST['inactive_supplier']))
     {
         $response = [
             'status' => 200,
-            'message' => 'Supplier Deleted Successfully'
+            'message' => 'Supplier has been set to inactive'
         ];
         echo json_encode($response);
         return;
@@ -182,7 +182,42 @@ if(isset($_POST['inactive_supplier']))
     {
         $response = [
             'status' => 500,
-            'message' => 'Supplier Not Deleted'
+            'message' => 'Supplier status does not change'
+        ];
+        echo json_encode($response);
+        return;
+    }
+}
+
+
+if(isset($_POST['active_supplier']))
+{
+    $supplier_id = $_POST['supplier_id'];
+
+    $query = "UPDATE suppliers SET supplier_status='ACTIVE' WHERE supplier_id='$supplier_id'";
+    $result= mysqli_query($conn, $query);
+
+    //Logs insertion
+    $uniqueId = "LO" . uniqid();
+    $activity = "Admin set the supplier with the supplier id -" . $supplier_id . " as active supplier";
+    $insertLogsQuery = "INSERT INTO logs (`log_id`, `activity`, `relation`) VALUES ('$uniqueId', '$activity', '$relation')";
+    mysqli_query($conn, $insertLogsQuery);
+    
+
+    if($result)
+    {
+        $response = [
+            'status' => 200,
+            'message' => 'Supplier has been set to active'
+        ];
+        echo json_encode($response);
+        return;
+    }
+    else
+    {
+        $response = [
+            'status' => 500,
+            'message' => 'Supplier status does not change'
         ];
         echo json_encode($response);
         return;

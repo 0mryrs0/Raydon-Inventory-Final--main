@@ -315,6 +315,9 @@ if (isset($_POST['getPurchaseDetails'])) {
 
 if(isset($_POST['deliveredProduct'])) {
     $purchaseOrderNumber = $_POST['purchaseOrderNumber'];
+    $time = strtotime("2024-02-05 21:44:42");
+    $formatted_time = date("Y-m-d H:i:s", $time);
+    
 
     // Update order status in purchase_orders table
     $updateOrderStatusQuery = "UPDATE purchase_orders SET order_status='DELIVERED' WHERE purchase_orderNumber='$purchaseOrderNumber'";
@@ -323,7 +326,7 @@ if(isset($_POST['deliveredProduct'])) {
 
 
     // Update delivery status in purchases table
-    $updateDeliveryStatusQuery = "UPDATE purchases SET delivery_status='COMPLETED' WHERE purchase_orderNumber='$purchaseOrderNumber'";
+    $updateDeliveryStatusQuery = "UPDATE purchases SET delivery_status='COMPLETED', date_delivered='$formatted_time' WHERE purchase_orderNumber='$purchaseOrderNumber'";
     $resultDeliveryStatus = mysqli_query($conn, $updateDeliveryStatusQuery);
     
 

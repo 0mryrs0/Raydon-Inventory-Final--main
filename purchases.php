@@ -134,7 +134,7 @@
                </button>
 
                <!-- Modal -->
-               <div class="modal fade modal-lg" id="purchaseOrderHistoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+               <div class="modal fade modal-xl" id="purchaseOrderHistoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                      <div class="modal-content">
                            <div class="modal-header">
@@ -151,6 +151,7 @@
                                           <th>Supplier Name</th>
                                           <th>Date Created</th>
                                           <th>Status</th>
+                                          <th>Date Delivered</th>
                                        </thead>
                                        <tbody id="purchase-details">
                                           <?php
@@ -166,6 +167,7 @@
                                                    <td><?php echo $fetch['supplier_name'] ?></td>
                                                    <td><?php echo $fetch['date_added'] ?></td>
                                                    <td><?php echo $fetch['delivery_status'] ?></td>
+                                                   <td><?php echo $fetch['date_delivered'] ?></td>
                                              </tr>
                                           <?php } ?>
                                        </tbody>
@@ -184,8 +186,8 @@
             </div>
             <hr>
             <!-- Current orders -->
-            <div class="modal fade" id="currentOrdersModal" tabindex="-1" aria-labelledby="currentOrdersModalLabel" aria-hidden="true">
-               <div class="modal-dialog modal-lg">
+            <div class="modal fade modal-xl" id="currentOrdersModal" tabindex="-1" aria-labelledby="currentOrdersModalLabel" aria-hidden="true">
+               <div class="modal-dialog ">
                   <div class="modal-content">
                         <div class="modal-header">
                            <h5 class="modal-title" id="currentOrdersModalLabel">Current Orders</h5>

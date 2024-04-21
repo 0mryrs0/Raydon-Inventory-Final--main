@@ -266,29 +266,32 @@ if(isset($_POST['searchInput']))
                         $supplier = $fetch['supplier'];
 
                     ?>
-                    <tr>
-                        <td><?php echo $productId ?></td>
-                        <td><?php echo $productName ?></td>
-                        <td><?php echo $category?></td>
-                        <td><?php echo $unit ?></td>
-                        <td><?php echo $price ?></td>
-                        <td><?php echo $stocks ?></td>
-                        <?php $status = check_stock_status($stocks);?>
-                        <td><?php echo $status?></td>
-                        <td><?php echo $supplier?></td>
 
+               <tr >
+                  <td><?php echo $fetch['product_id']?></td>
+                  <td><?php echo $fetch['product']?></td>
+                  <td><?php echo $fetch['category']?></td>
+                  <td><?php echo $fetch['unit']?></td>
+                  <td>&#x20B1; <?php echo $fetch['price']?></td>
+                  <td><?php echo $fetch['stocks']?></td>
+                  <?php $stock_status = check_stock_status($fetch['stocks']);
+                     $updateStocks= "UPDATE products SET stock_status='$stock_status' WHERE product_id={$fetch['product_id']}";
+                     mysqli_query($conn, $updateStocks);
+                  ?>
+                  <td><?php echo $stock_status?></td>
+                  <td><?php echo $fetch['supplier']?></td>
 
-                    <td class='action action-column'>
-                            <button type='button' value='<?php echo $productId?>' class='editProductBtn action-btn opacity-btn'  data-bs-toggle='modal' data-bs-target='#editProductModal' tabindex='-1' >
-                            <i class='fa-regular fa-pen-to-square p-2 bgYellow text-white'></i>
-                        </button>
-                            <button type='button' value='<?php echo $productId?>' class='deleteProductBtn delete-btn action-btn opacity-btn'>
-                            <i class='fa-solid fa-trash p-2  bgMaroon text-white'></i>
-                        </button>
-                    </td>
-                </tr>
+                  <td class='action action-column'>
+                     <button type='button' value='<?php echo $fetch['product_id']?>' class='editProductBtn action-btn opacity-btn'  data-bs-toggle='modal' data-bs-target='#editProductModal' tabindex='-1' >
+                        <i class='fa-regular fa-pen-to-square p-2 bgYellow text-white' data-bs-toggle="tooltip" title="Edit product"></i>
+                     </button>
+                     <button type='button' value='<?php echo $fetch['product_id']?>' class='deleteProductBtn delete-btn action-btn opacity-btn'>
+                        <i class='bi bi-x-circle-fill p-2  bgMaroon text-white' data-bs-toggle="tooltip" title="Move product to phaseout"></i>
+                     </button>
+                  </td>
+               </tr>
 
-                <?php } ?>
+               <?php } ?>
                 </tbody>
 
             </table>

@@ -110,7 +110,7 @@
          </button>
          
                <!-- Modal -->
-               <div class="modal fade modal-lg" id="inactiveSupplierModal" tabindex="-1" aria-labelledby="inactiveSupplierModalLabel" aria-hidden="true">
+               <div class="modal fade modal-xl" id="inactiveSupplierModal" tabindex="-1" aria-labelledby="inactiveSupplierModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                      <div class="modal-content">
                            <div class="modal-header">
@@ -125,6 +125,7 @@
                                           <th>Business Name</th>
                                           <th>Contact Number</th>
                                           <th>Email</th>
+                                          <th>Action</th>
                                        </thead>
                                        <tbody id="purchase-details">
                                           <?php
@@ -139,6 +140,7 @@
                                                 <td><?php echo $fetch['business_name']?></td>
                                                 <td><?php echo $fetch['contact_number']?></td>
                                                 <td><?php echo $fetch['email']?></td>
+                                                <td><button class="btn btn-success btn-sm active" value="<?php echo $fetch['supplier_id']?>">active</button></td>
                                              </tr>
                                           <?php } ?>
                                        </tbody>
@@ -311,6 +313,35 @@ $(document).on('click', '.deleteSupplierBtn', function (e) {
          url: "supplierCode.php",
          data: {
             'inactive_supplier': true,
+            'supplier_id': supplier_id
+         },
+         success: function (response) {
+
+            var res = jQuery.parseJSON(response);
+            if(res.status == 500) {
+
+                  alert(res.message);
+            }else if (res.status == 200){
+                  alert(res.message);
+                  $('#table-content').load(location.href + " #table-content");
+                  $('#inactiveSupplierTable').load(location.href + " #inactiveSupplierTable");
+            }
+         }
+         });
+   }
+});
+
+
+$(document).on('click', '.active', function (e) {
+   e.preventDefault();
+
+   if(confirm('Are you sure that this supplier is active again?')){
+      var supplier_id = $(this).val();
+      $.ajax({
+         type: "POST",
+         url: "supplierCode.php",
+         data: {
+            'active_supplier': true,
             'supplier_id': supplier_id
          },
          success: function (response) {

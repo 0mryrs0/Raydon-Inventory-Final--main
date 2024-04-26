@@ -362,7 +362,7 @@ $(document).on('click', '.active', function (e) {
 
 function printSupplierTable() {
    var printWindow = window.open('_blank');
-   printWindow.document.write('<html><head><title>Product Table</title>');
+   printWindow.document.write('<html><head><title>Supplier Table</title>');
 
    // Include Bootstrap CSS
    printWindow.document.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">');
@@ -371,6 +371,9 @@ function printSupplierTable() {
       hiddenColumns[i].classList.add('d-none');
    }
    printWindow.document.write('</head><body>');
+   printWindow.document.write('<div class="text-center"><img src="../img/companyLogo2.svg" class="img-fluid" style="max-width: 200px;"></div>');
+   printWindow.document.write('<h2 class="text-center">Raydon Construction Trading</h2>');
+   printWindow.document.write('<hr><hr>');
    printWindow.document.write('<h2 class="text-center mt-4 mb-2">List of Supplier Report</h2>');
    printWindow.document.write('<div class="container-fluid fs-4">');
    printWindow.document.write(document.getElementById('table').innerHTML);
@@ -396,7 +399,7 @@ function printSupplierTable() {
 
 function printInactiveSupplierTable() {
    var printWindow = window.open('_blank');
-   printWindow.document.write('<html><head><title>Product Table</title>');
+   printWindow.document.write('<html><head><title>Supplier Table</title>');
 
    // Include Bootstrap CSS
    printWindow.document.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">');
@@ -405,6 +408,9 @@ function printInactiveSupplierTable() {
       hiddenColumns[i].classList.add('d-none');
    }
    printWindow.document.write('</head><body>');
+   printWindow.document.write('<div class="text-center"><img src="../img/companyLogo2.svg" class="img-fluid" style="max-width: 200px;"></div>');
+   printWindow.document.write('<h2 class="text-center">Raydon Construction Trading</h2>');
+   printWindow.document.write('<hr><hr>');
    printWindow.document.write('<h2 class="text-center mt-4 mb-2">Inactive Supplier Report</h2>');
    printWindow.document.write('<div class="container-fluid fs-4">');
    printWindow.document.write(document.getElementById('inactiveSupplierTable').innerHTML);

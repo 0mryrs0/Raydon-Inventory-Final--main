@@ -247,8 +247,8 @@ if(isset($_POST['searchInput']))
                     <th>Category</th>
                     <th>Unit</th></th>
                     <th>Price</th> 
-                        <th>stocks</th>
-                        <th>Status</th>
+                    <th>stocks</th>
+                    <th>Status</th>
                     <th>Supplier</th>
                     <th class="action-column">Action</th>
                 </tr> 

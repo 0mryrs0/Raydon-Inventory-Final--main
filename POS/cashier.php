@@ -33,7 +33,7 @@ $messageError = "";
                         else 
                         {
                             if ($password == $user_data['password']) {
-                                var_dump($user_data['password'], $password); // To check if the data are correct
+                                // var_dump($user_data['password'], $password); To check if the data are correct
                                 $_SESSION['cashier_id'] = $user_data['cashier_id'];
                                 // Checking if the user is an admin or not
                                 echo "You are logged in";
@@ -41,7 +41,7 @@ $messageError = "";
                                 die();
                             } else {
                                 $messageError = "Wrong password or username";
-                                var_dump($user_data['password'], $password); // Output for debugging
+                                //var_dump($user_data['password'], $password);  Output for debugging
                             }
 
                         }

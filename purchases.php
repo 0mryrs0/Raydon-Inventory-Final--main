@@ -717,7 +717,7 @@ function printPurchaseOrder2() {
 
 function printCurrentOrdersTable() {
    var printWindow = window.open('_blank');
-   printWindow.document.write('<html><head><title>Product Table</title>');
+   printWindow.document.write('<html><head><title>Purchases Table</title>');
 
    // Include Bootstrap CSS
    printWindow.document.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">');
@@ -726,7 +726,8 @@ function printCurrentOrdersTable() {
       hiddenColumns[i].classList.add('d-none');
    }
    printWindow.document.write('</head><body>');
-   printWindow.document.write('<h2 class="text-center"><img src="../img/companyLogo2.svg" class="w-25 text-center">Raydon Construction Trading</h2>');
+   printWindow.document.write('<div class="text-center"><img src="../img/companyLogo2.svg" class="img-fluid" style="max-width: 200px;"></div>');
+   printWindow.document.write('<h2 class="text-center">Raydon Construction Trading</h2>');
    printWindow.document.write('<hr><hr>');
    printWindow.document.write('<h2 class="text-center mt-2">Current Orders Report</h2>');
    printWindow.document.write('<div class="container-fluid fs-4">');
@@ -753,7 +754,7 @@ function printCurrentOrdersTable() {
 
 function printOrderHistoryTable() {
    var printWindow = window.open('_blank');
-   printWindow.document.write('<html><head><title>Product Table</title>');
+   printWindow.document.write('<html><head><title>Purchases Table</title>');
 
    // Include Bootstrap CSS
    printWindow.document.write('<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">');
@@ -762,7 +763,8 @@ function printOrderHistoryTable() {
       hiddenColumns[i].classList.add('d-none');
    }
    printWindow.document.write('</head><body>');
-   printWindow.document.write('<h2 class="text-center"><img src="../img/companyLogo2.svg" class="w-25 text-center">Raydon Construction Trading</h2>');
+   printWindow.document.write('<div class="text-center"><img src="../img/companyLogo2.svg" class="img-fluid" style="max-width: 200px;"></div>');
+   printWindow.document.write('<h2 class="text-center">Raydon Construction Trading</h2>');
    printWindow.document.write('<hr><hr>');
    printWindow.document.write('<h2 class="text-center mt-2">Purchased Product Report</h2>');
    printWindow.document.write('<div class="container-fluid fs-4">');

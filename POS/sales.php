@@ -51,8 +51,8 @@ session_start();
           </div>
       </nav>
       <div class= "container-fluid p-4 d-flex-column row mt-2" id="main-content">
-        <div class="col my-3">
-            <div class="row sales-search bg-dark text-white p-4 py-5 rounded">
+        <div class="col my-2">
+            <div class="row sales-search bg-dark text-white p-4 rounded">
                 <form id="product-choice-sales">
                     <input class="form-control form-control border-outline-dark" type="search" placeholder="Search" id="search-input" name="search-input" autocomplete="off">
                     <div class="row table-container my-2 " id="table-container">
@@ -69,14 +69,14 @@ session_start();
                         <input type="number" class="form-control form-control-sm col" id="productChoiceQuantity" name="productChoiceQuantity">
                     </div>
                     <div class="form-group mb-1 row">
-                        <label for="sales-quantity" class="form-label col">Price:</label>
+                        <label for="sales-quantity" class="form-label col mb-2">Price:</label>
                         <input type="number" class="form-control form-control-sm col" readonly=true id="productChoicePrice" name="productChoicePrice">
                     </div>
-                    <div class="alert alert-warning d-none my-2" id="errorMessage">
+                    <div class="alert alert-danger d-none mt-2" id="errorMessage">
                         
                     </div>
                     <div class="row">
-                        <button type="submit" class="add-item btn btn-outline-light mx-auto mt-3 py-3 fw-bold">Add item</button>
+                        <button type="submit" class="add-item btn btn-outline-light mx-auto py-3 mt-2 fw-bold">Add item</button>
                     </div> 
                 </form> 
             </div>
@@ -107,7 +107,7 @@ session_start();
                 <input type="hidden" value="<?php echo $user_data['cashier_id'];?>" id="cashier_id" name="cashier_id"> 
             </div>
             <div id="sales-table" class="row">
-                <div class="mt-1 overflow-y-scroll w-100 border" id="table" style="height: 200px">
+                <div class="mt-1 overflow-y-scroll w-100 border" id="table" style="height: 250px">
                     <table class="table table-warning table-hover text-center default-table fs-6 table-bordered align-middle " id='table-content'>
                         <thead class="table-dark">
                             <tr>
@@ -431,7 +431,9 @@ $(document).on('click', '#confirm-btn', function(e){
                 });
                 $('#customer-change').removeClass('d-none');
                 $(".add-item").attr("disabled", true);
-                $("#confirm-btn").attr("disabled", true);
+                $("#confirm-btn").addClass('d-none');
+                $("#amount-paid").attr("readonly", true);
+                $("#quantity").attr("readonly", true);
                 
 
             } 
